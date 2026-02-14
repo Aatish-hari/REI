@@ -1,0 +1,31 @@
+A shell should work like this..., MAYBE.. ??
+-Shell looping
+-Parsing
+-Command execution 
+-Handle Built in commands
+-Execute external commands
+-env variables
+-Path
+-Error Handling
+
+1.external command =>
+    does NOT live inside the shell
+    exists as a separate executable file on disk
+    is run by the shell using fork() + execve(), example 'ls', 
+
+    What actually happens when 'ls' is written:
+    Shell looks for ls in PATH
+    Finds /bin/ls
+    Forks
+    Child calls:
+    execve("/bin/ls", ["ls", NULL], envp);
+
+2.environment variables
+    Environment variables are just key–value strings that your shell keeps and passes to every program it runs.
+    Example:
+    PATH=/bin:/usr/bin
+    HOME=/home/user
+    USER=alice      example: ls need PATH to run
+
+3. Manage Path
+    using the value of PATH to find executables
