@@ -1,6 +1,6 @@
 #include "utils.h"
 
-char** parsing(char* input){
+char** parsing_input(char* input){
 
     char** tokens = malloc(1024 * sizeof(char*));
 
@@ -16,7 +16,7 @@ char** parsing(char* input){
         int end = i;
         tokens[index] = malloc((end-st+1) * sizeof(char));
         for(int j = 0 ; j<end-st ; j++){                    
-            tokens[index][j] = token[st+j];                     
+            tokens[index][j] = token[st+j];             // tokens[3][0] -> [(index1), (index2), (j)]       
         }
          tokens[index][end-st] = '\0';
         index++;
@@ -24,4 +24,11 @@ char** parsing(char* input){
     
     tokens[index] = NULL;
     return tokens;
+}
+
+void free_tokens(char** tokens){
+    for(int i = 0; tokens[i] != NULL ; i++){
+        free(tokens[i]);
+    }
+    free(tokens);
 }

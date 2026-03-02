@@ -11,7 +11,18 @@ int main(int argc, char** argv, char** env){
         printf("(REI): ");
         getline(&input, &inputsize, stdin);
 
-        tokens = parsing(input);
+        tokens = parsing_input(input);
+
+        if (tokens == NULL || tokens[0] == NULL){
+            continue;
+        }
+        if (strcmp(tokens[0], "exit\n")==0){
+            printf("REI closed\n");
+            break;
+        }
+        
     }
+
+    free_tokens(tokens);
 
 }

@@ -12,7 +12,7 @@ A shell should work like this..., MAYBE.. ??
     does NOT live inside the shell
     exists as a separate executable file on disk
     is run by the shell using fork() + execve(), example 'ls', 
-
+    
     What actually happens when 'ls' is written:
     Shell looks for ls in PATH
     Finds /bin/ls

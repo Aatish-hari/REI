@@ -1,3 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-char** parsing(char* input);
+#include<stdlib.h>
+char** parsing_input(char* input);
+
+void free_tokens(char** tokens);
