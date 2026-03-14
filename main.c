@@ -20,7 +20,7 @@ int main(int argc, char** argv, char** env){
             printf("REI closed\n"); 
             break;
         }
-        commandExecution(tokens, env);
+        CommandExecution(tokens, env);
         
     }
 

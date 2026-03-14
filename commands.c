@@ -1,6 +1,6 @@
 #include "utils.h"
 
-void commandExecution(char** tokens, char** env){
+void CommandExecution(char** tokens, char** env){
     
     if(strcmp(tokens[0], "echo") == 0){
         for(int i = 1; tokens[i] ; i++){
@@ -9,7 +9,36 @@ void commandExecution(char** tokens, char** env){
             printf("\n");
         }
     }
-    else if(){
+
+//cd command======>
+    else if(strcmp(tokens[0], "cd") == 0){
+        
+    if(tokens[1] == NULL) {
+        printf("Error: Need directory name as argument\n");
+        }
+
+    else{
+        tokens[1][strcspn(tokens[1], "\n")] = 0;
+
+    if(chdir(tokens[1]) != 0) {
+        printf("cd: no such directory\n");
+        }
+    else{
+        char cwd[1024];
+        getcwd(cwd, sizeof(cwd));
+        printf("%s\n", cwd);
+        }
+    }
+}
+//===================>
+
+//pwd command========>
+    else if(strcmp(tokens[0], "pwd") == 0){
+
+
 
     }
+//=================>
+
+
 }
