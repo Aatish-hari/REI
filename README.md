@@ -1,0 +1,1 @@
+REI Shell is a simple command-line shell written in C that replicates some basic functionality of traditional Unix shells.
