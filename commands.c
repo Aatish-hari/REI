@@ -25,9 +25,10 @@ void CommandExecution(char** tokens, char** env){
             printf("cd: no such directory\n");
         }
         else{
-            char cwd[1024];
-            getcwd(cwd, sizeof(cwd));
+            char* cwd;
+            cwd = getcwd(NULL, 0);
             printf("%s\n", cwd);
+            free(cwd);
         }
     }
 }
@@ -35,9 +36,10 @@ void CommandExecution(char** tokens, char** env){
 
 //pwd command========>
     else if(strcmp(tokens[0], "pwd") == 0){
-        char cwd[1024];
-        getcwd(cwd, sizeof(cwd));
+        char* cwd;
+        cwd = getcwd(NULL, 0);
         printf("%s\n", cwd);
+        free(cwd);
     }
 //=================>
 
