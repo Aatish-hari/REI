@@ -2,6 +2,7 @@
 
 void CommandExecution(char** tokens, char** env){
     
+//echo command====>
     if(strcmp(tokens[0], "echo") == 0){
         for(int i = 1; tokens[i] ; i++){
             printf(tokens[i]);
@@ -18,15 +19,15 @@ void CommandExecution(char** tokens, char** env){
         }
 
     else{
-        tokens[1][strcspn(tokens[1], "\n")] = 0;
+        // tokens[1][strcspn(tokens[1], "\n")] = 0;        //
 
-    if(chdir(tokens[1]) != 0) {
-        printf("cd: no such directory\n");
+        if(chdir(tokens[1]) != 0) {
+            printf("cd: no such directory\n");
         }
-    else{
-        char cwd[1024];
-        getcwd(cwd, sizeof(cwd));
-        printf("%s\n", cwd);
+        else{
+            char cwd[1024];
+            getcwd(cwd, sizeof(cwd));
+            printf("%s\n", cwd);
         }
     }
 }
@@ -34,9 +35,9 @@ void CommandExecution(char** tokens, char** env){
 
 //pwd command========>
     else if(strcmp(tokens[0], "pwd") == 0){
-
-
-
+        char cwd[1024];
+        getcwd(cwd, sizeof(cwd));
+        printf("%s\n", cwd);
     }
 //=================>
 

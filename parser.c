@@ -21,6 +21,9 @@ char** parsing_input(char* input){
          tokens[index][end-st] = '\0';
         index++;
     }
+
+    tokens[index-1][strcspn(tokens[index-1], "\n")] = 0; //removing \n of last index
+    
     
     tokens[index] = NULL;
     return tokens;
