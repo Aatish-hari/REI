@@ -5,7 +5,13 @@ void CommandExecution(char** tokens, char** env){
 //echo command====>
     if(strcmp(tokens[0], "echo") == 0){
         for(int i = 1; tokens[i] ; i++){
-           printf("%s ", tokens[i]);
+            if(tokens[i][0] == '$'){
+                char* env = getenv(tokens[i] +1);
+                printf("%s ", env);
+            }
+            else{
+                printf("%s ", tokens[i]);
+            }
             if(!tokens[i+1])
                 printf("\n");
         }
