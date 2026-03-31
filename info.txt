@@ -8,7 +8,7 @@ A shell should work like this..., MAYBE.. ??
 -Path
 -Error Handling
 
-1.external command =>
+1.external command/stored in system/ not part of shell=>
     does NOT live inside the shell
     exists as a separate executable file on disk
     is run by the shell using fork() + execve(), example 'ls', 
