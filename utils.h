@@ -7,3 +7,5 @@ char** parsing_input(char* input);
 void free_tokens(char** tokens);
 
 void CommandExecution(char** tokens, char** env);
+
+char* finding_path(char* command);
